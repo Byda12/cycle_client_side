@@ -5,19 +5,28 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
-
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <Header></Header>
-      <Login></Login>
-      <Home></Home>
-      <Register></Register>
-      <NotFound></NotFound>
-     <Footer></Footer>
+       <Routes>
+         <Route path="/" element={<Home/>} /> 
+         <Route path="/home" element={<Home/>} /> 
+         <Route path="/login" element={<Login/>}/> 
+         <Route path="/register" element={<Register/>} />   
+         <Route path="*" element={<NotFound/>} />   
+       </Routes>
+       <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }
-
 export default App;
 
