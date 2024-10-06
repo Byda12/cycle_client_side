@@ -6,7 +6,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
   Link,
@@ -14,7 +14,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <Header></Header>
        <Routes>
          <Route path="/" element={<Home/>} /> 
@@ -24,7 +24,7 @@ function App() {
          <Route path="*" element={<NotFound/>} />   
        </Routes>
        <Footer></Footer>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
